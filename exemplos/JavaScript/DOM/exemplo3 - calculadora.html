@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando Dom e JavaScript</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <script src="scripts/calc.js"></script>    
+</head>
+<body>
+    <h1>Calculadora Simplex</h1>
+    <form action="">
+        <ul>
+            <li>
+                <label for="valor1">Primeiro valor</label>
+                <input type="text" id="valor1">
+            </li>
+            <li>
+                <label for="operacao">Escolha a operação aritmética</label>
+                <select id="operacao">
+                    <option value="+"> +(adição)</option>
+                    <option value="-"> -(subtração)</option>
+                    <option value="*"> *(multiplicação)</option>
+                    <option value="/"> /(divisão)</option>
+                </select>
+            </li>
+            <li>
+                <label for="valor2">Segundo valor</label>
+                <input type="text" id="valor2">
+            </li>
+        </ul>
+        <input type="button" onclick="Calcular('valor1','valor2','operacao','saida')" value="Calcular">
+        <input type="button" onclick="Limpar('valor1','valor2')" value="Limpar os valores">
+    </form>
+    <p id="saida"></p>
+</body>
+
+</html>

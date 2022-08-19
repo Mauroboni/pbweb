@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <title>Testando o DOM</title>
 </head>
+
 <body>
     <h1>Exemplo de documento WEB Simples</h1>
     <p id="Principal">O DOM é uma representação de um documento WEB</p>
+    <p class="Paragrafo">Essa representação pode ser acessada por métodos e atributos.</p>
+    <p class="Paragrafo">Os métodos permitem selecionar elementos HTML, ou até mesmo criar novos.</p>
+    <p class="Paragrafo">O atributo innerHtml é o responsável por alterar o conteúdo de um elemento.</p>
+    <p id="Novo"></p>
+    <p id="Novo">O segundo novo...</p>
 </body>
+<script>
+    //Exemplo do getElementById
+    //Exemplo 1
+    var paragrafo = document.getElementById("Novo");
+    paragrafo.innerHTML = "Conteúdo novo!";
+    //Exemplo 2
+    document.getElementById("Novo").innerHTML = "Conteúdo novo, de novo!";
+    // Exemplo3
+    // document.getElementById("Novo").innerHTML = document.documentElement.innerHTML;
+
+    //Exemplo do getElementsByTagName
+    //Mostra a lista
+    var paragrafo = document.getElementsByTagName("p");
+    console.log(paragrafo);
+    //Altera um valor da lista
+    paragrafo[0].innerHTML = "Alterei o primeiro paragrafo";
+
+    //Exemplo do getElementByClassName
+    document.getElementsByClassName("paragrafo")[2].innerHTML = "Esse parágrafo foi alterado usando o DOM!";
+
+    //Exemplo do getElementsByName
+	//Por exemplo usado pelo servidor para identificar os campos no envio do formulário.O nome do controle, que é enviado junto com os dados do formulário.ame, que você usa pra identificar valores do lado do servidor(server - side
+	
+    document.getElementsByTagName("p")[0].innerHTML = "Alterei o primeiro paragrafo";
+
+    // Exemplos do QuerySelector
+    //Exemplo1 -  localiza e retorna o primeiro elemento "p"
+    document.querySelector("p").style.backgroundColor = "orange";
+    //Exemplo2
+    function textoFunção() {
+        var x = document.querySelector(".paragrafo");
+        x.innerHTML = "Valeu, fiquei melhor agora!";
+        x.style.color = "red";
+    }
+
+    // Outros métodos
+    //Cria um novo elemento HTML e o insere depois dos outros
+    var paragrafo = document.createElement("p");
+    paragrafo.innerHTML = "Esse paragrafo foi criado usando o DOM!";
+    document.body.appendChild(paragrafo);
+
+</script>
+
 </html>

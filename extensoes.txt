@@ -1,0 +1,10 @@
+code --install-extension ecmel.vscode-html-css
+code --install-extension esbenp.prettier-vscode
+code --install-extension MS-CEINTL.vscode-language-pack-pt-BR
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension streetsidesoftware.code-spell-checker-portuguese-brazilian
+code --install-extension xabikos.JavaScriptSnippets
+code --install-extension Zignd.html-css-class-completion
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+
+

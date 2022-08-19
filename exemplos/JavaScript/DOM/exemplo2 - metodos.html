@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando o DOM</title>
+</head>
+
+<body>
+    <h1>Exemplo de documento WEB Simples</h1>
+    <p id="Principal">O DOM é uma representação de um documento WEB</p>
+    <p class="paragrafo">O objeto Document representa o documento HTML.</p>
+    <p class="paragrafo">Os métodos e propriedades do Document acessam e modificam o conteúdo da página de manira
+        totalmente dinâmica</p>
+    <p id="Novo"></p>
+    <p class="paragrafo">Clique no botão apara mudar o texto e a cor do primeiro parágrafo que usa
+        <strong>class=paragrafo</strong>.
+    </p>
+    <button onclick="textoFunção()">Mudar a cor</button>
+</body>
+<script>
+    //Exemplo do getElementById
+    //Exemplo 1
+    var paragrafo = document.getElementById("Novo");
+    paragrafo.innerHTML = "Conteúdo novo!";
+    //Exemplo 2
+    document.getElementById("Novo").innerHTML = "Conteúdo novo, de novo!";
+    // Exemplo3
+    // document.getElementById("Novo").innerHTML = document.documentElement.innerHTML;
+
+    //Exemplo do getElementsByTagName
+    //Mostra a lista
+    var paragrafo = document.getElementsByTagName("p");
+    console.log(paragrafo);
+    //Altera um valor da lista
+    paragrafo[0].innerHTML = "Alterei o primeiro paragrafo";
+
+    //Exemplo do getElementByClassName
+    document.getElementsByClassName("paragrafo")[2].innerHTML = "Esse parágrafo foi alterado usando o DOM!";
+
+    //Exemplo do getElementsByName
+    document.getElementsByTagName("p")[0].innerHTML = "Alterei o primeiro paragrafo";
+
+    // Exemplos do QuerySelector
+    //Exemplo1 -  localiza e retorna o primeiro elemento "p"
+    document.querySelector("p").style.backgroundColor = "orange";
+    //Exemplo2
+    function textoFunção() {
+        var x = document.querySelector(".paragrafo");
+        x.innerHTML = "Valeu, fiquei melhor agora!";
+        x.style.color = "red";
+    }
+
+    // Outros métodos
+    //Cria um novo elemento HTML e o insere depois dos outros
+    var paragrafo = document.createElement("p");
+    paragrafo.innerHTML = "Esse paragrafo foi criado usando o DOM!";
+    document.body.appendChild(paragrafo);
+
+
+    // //Cria um novo elemento HTML e o insere antes dos anteriores
+    // document.getElementsByTagName("p")[0].innerHTML = "Alterei o primeiro paragrafo";
+
+
+    // // Outros métodos
+    // //Cria um novo elemento HTML e o insere depois dos outros
+    // var paragrafo = document.createElement("p");
+    // paragrafo.innerHTML = "Paragrafo criado usando o DOM!";
+    // document.body.appendChild(paragrafo);
+
+    // var lista = document.createElement("ul");
+    // //Cria um novo elemento HTML e o insere antes dos anteriores
+    // document.getElementsByTagName("p")[0].innerHTML = "Alterei o primeiro paragrafo";
+
+    // //Cria um novo elemento HTML e o insere antes dos anteriores
+    // var paragrafos = document.getElementsByTagName("p")[0].innerHTML = "Alterei o primeiro paragrafo";
+    // var paragrafo = document.createElement("p");
+    // paragrafo.innerHTML = "Paragrafo criado usando o DOM!";
+    // // Exemplo de função que usa o DOM
+    // function adicionaItem(nome) {
+    //     document.getElementsByTagName("ul").innerHTML += "<li>" + nome + "</li>"
+    // }
+    // // Exemplos do QuerySelector
+    // //Exemplo1 -  localiza e retorna o primeiro elemento "p"
+    // document.querySelector("p").style.backgroundColor = "orange";
+    // //Exemplo2
+    // function textoFunção() {
+    //     var x = document.querySelector(".paragrafo");
+    //     x.innerHTML = "Valeu, fiquei melhor agora!";
+    //     x.style.color = "red";
+    // }
+</script>
+
+</html>

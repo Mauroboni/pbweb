@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de função em JavaScript</title>
+</head>
+
+<body>
+    <h1>Calculando uma soma em JavaScript</h1>
+    <form action="">
+        <input type="text" id="valor1"><br>
+        <input type="text" id="valor2"><br>
+        <input type="button" value="Calcular a soma dos valores" onclick="soma('valor1', 'valor2');">
+    </form>
+</body>
+<script>
+    function soma(numero1, numero2) {
+        var y = parseInt(document.getElementById(numero1).value);
+        var z = parseInt(document.getElementById(numero2).value);
+        var x = y + z;
+        document.body.innerHTML = "A soma é " + x + ". Mas o que aconteceu com o conteúdo anterior da página?";
+        alert("A soma de ${y} com ${z} é ${x}");
+    }
+</script>
+
+</html>

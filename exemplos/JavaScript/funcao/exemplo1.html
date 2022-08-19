@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de função em JavaScript</title>
+</head>
+
+<body>
+    <h1>Usando funções em JavaScript</h1>
+    <p>Nesse exemplo você vai conhecer maneiras diferentes de fazer a declaração de uma função em JavaScript.</p>
+    <h2>Exemplo 1 -Criando uma função simples</h2>
+    <p>Nesse exemplo, a função é declarada normalmente, apenas usando a palavra <i>function</i> seguida pelo seu nome.
+    </p>
+    <script>
+        //Parte1 - Declaração de função
+        const numero = 2;
+        console.log(elevarAoQuadrado(5));
+        console.log(elevarAoQuadrado(numero));
+        console.log('O quadrado de ' + numero + ' é ' + elevarAoQuadrado(numero));
+        // alert('O quadrado de ' + numero + ' é ' + elevarAoQuadrado(numero));
+        // alert(elevarAoQuadrado(5));
+
+        function elevarAoQuadrado(numero) {
+            return numero * numero;
+        }
+    </script>
+    <h2>Exemplo 2 - Passagem de parâmetros e o hoisting</h2>
+    <p>Há dois exemplos</p>
+    <ul>
+        <li>Um primeiro mostra como é a passagem de parametos para uma função.</li>
+        <li>No segundo exemplo, a função é declarada como uma expressão. Nesse caso ela é atribuída a uma variável.
+            Quando criamos uma função dessa
+            maneira não podemos usar o <i>hoisting</i></li>
+    </ul>
+    <script>
+        //Parte 2 - Expressão de função 
+        //Não permite o Hoisting
+        var soma = function (a, b) { return a + b }
+
+        alert("Soma " + soma(5, 8));
+        alert("Somar mais 21 a soma " + soma(5, 8 + 21));
+
+    </script>
+    <h2>Exemplo 3 - Chamando uma função a partir de uma ação do usuário</h2>
+    <p>Nesse exemplo, a função só será chamada quando o usuário fizer uma interação específica com a interface. </p>
+    <p>Por que não aconteceu nada? O Script não deveria ter sido executado antes de aparecer o conteúdo da página?</p>
+    <input type="submit" value="Chamar a função" id="botao" onClick="mensagem();" />
+
+</body>
+
+</html>
