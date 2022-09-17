@@ -45,9 +45,9 @@
         }
 
         /* Estilizando a entrada de dados */
-        form input[type=email],input[type=password] {
+        form input {
             height: 20px;
-            width: 100%;
+            width: 97%;
             display: block;
             margin: 0px;
             text-align: left;
@@ -73,7 +73,12 @@
             opacity: 0.8;
             cursor: pointer;
         }
-        
+
+        form input:required:valid{
+            background: #fff url(../../../imagens/valido.png) no-repeat 98% center;
+            box-shadow: 0 0 5px #5cd053;
+            border-color: #28921f;            
+        }
     </style>
 </head>
 
