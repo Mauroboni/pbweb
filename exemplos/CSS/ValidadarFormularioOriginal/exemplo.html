@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mauro Henrique Lima de Boni">
+    <title>Validando um formulário usando CSS</title>
+    <style>
+        :-moz-placeholder {
+            color: rgb(180, 180, 202);
+        }
+
+        ::-webkit-input-placeholder {
+            color: rgb(180, 180, 202);
+        }
+
+        body {
+            font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+        }
+
+        /* O formulário deve ser separado do resto do conteúdo da página*/
+        .formulario li:first-child,
+        .formulario li:last-child {
+            border-bottom: 1px solid #777;
+        }
+
+        /* Qual é a fonte que será usada pelo Sub-título e pelos labels */
+        .formulario h2,
+        .formulario label {
+            font-family: Georgia, Times, "Times New Roman", serif;
+        }
+
+        /* Como o sub-titulo ficará posicionando na página */
+        .formulario h2 {
+            margin: 0;
+            display: inline;
+        }
+
+        /* Como a lista dentro do formulario será */
+        .formulario ul {
+            width: 90%;
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        /* Como cada item da lista deve ser */
+        .formulario li {
+            padding: 10px;
+            /* border-bottom: 1px solid #eee; */
+            position: relative;
+        }
+
+        /* Qual é a aparência da notificação */
+        .required_notification {
+            color: #d45252;
+            margin: 5px 0 0 0;
+            display: inline;
+            float: right;
+        }
+
+        /* Qual é a fonte usada pelo lembrete e pela notificação */
+        .required_notification,
+        .form_hint {
+            font-size: 11px;
+        }
+
+
+        .formulario label {
+            width: 150px;
+            margin-top: 3px;
+            display: inline-block;
+            float: left;
+            padding: 3px;
+        }
+
+        /* Estilizando os elementos que interagem com os usuários  a entrada de dados */
+        .formulario input {
+            height: 20px;
+            width: 220px;
+            padding: 5px 8px;
+        }
+
+        .formulario textarea {
+            padding: 8px;
+            width: 300px;
+        }
+
+        .formulario button {
+            margin-left: 156px;
+        }
+
+        .formulario input,
+        .formulario textarea {
+            border: 1px solid #aaa;
+            box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+            border-radius: 2px;
+        }
+
+        /* Cria um espaço do lado direito dos elementos input 
+           e textarea que estão no formulario */
+        .formulario input,
+        .formulario textarea {
+            padding-right: 30px;
+        }
+
+        /* Formata todos os elementos que estão marcados como required */
+        input:required,
+        textarea:required {
+            background: #fff url(../../../imagens/asterisco10.png) no-repeat 98% center;
+        }
+
+        /* CSS que valida o formulário começa aqui*/
+
+        .formulario input:focus,
+        .formulario textarea:focus {
+            background: #fff;
+            border: 1px solid #555;
+            box-shadow: 0 0 3px #aaa;
+        }
+        /* Como fica o campo quando o Browser o considerar invalido */
+        .formulario input:focus:invalid,
+        .formulario textarea:focus:invalid {
+            background: #fff url(../../../imagens/valido.png) no-repeat 98% center;
+            box-shadow: 0 0 5px #d45252;
+            border-color: #b03535
+        }
+        
+        /* Como deve ficar o campo quando ele for considerado valido */
+        .formulario input:required:valid,
+        .formulario textarea:required:valid {
+            background: #fff url(../../../imagens/valido.png) no-repeat 98% center;
+            box-shadow: 0 0 5px #5cd053;
+            border-color: #28921f;
+        }
+
+        .form_hint {
+            background: #d45252;
+            border-radius: 3px 3px 3px 3px;
+            color: white;
+            margin-left: 8px;
+            padding: 1px 6px;
+            /* hints stay above all other elements */
+            position: absolute;
+            /* allows proper formatting if hint is two lines */
+            z-index: 999;
+            display: none;
+        }
+
+        .form_hint::before {
+            content: "\25C0";
+            /* left point triangle in escaped unicode */
+            color: #d45252;
+            position: absolute;
+            top: 1px;
+            left: -6px;
+        }
+
+        .formulario input:focus+.form_hint {
+            display: inline;
+        }
+
+        .formulario input:required:valid+.form_hint {
+            background: #28921f;
+        }
+
+        /* change form hint color when valid */
+        .formulario input:required:valid+.form_hint::before {
+            color: #28921f;
+        }
+
+        /* change form hint arrow color when valid */
+    </style>
+</head>
+
+<body>
+    <form class="formulario" action="" method="post" name="formulario">
+        <ul>
+            <li>
+                <h2>Entre em contato</h2>
+                <span class="required_notification">* Indica que o campo é obrigatório</span>
+            </li>
+            <li>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" placeholder="Fulano de tal" required />
+            </li>
+            <li>
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="usuario@servidor.com" required />
+                <span class="form_hint">Formato correto "usuario@servidor.com"</span>
+            </li>
+            <li>
+                <label for="website">Website:</label>
+                <input type="url" name="website" placeholder="http://johndoe.com"
+                    pattern="(http|https)://.+" />
+                <span class="form_hint">Formato correto "https://someaddress.com"</span>
+            </li>
+            <li>
+                <label for="mensagem">Mensagem:</label>
+                <textarea name="mensagem" cols="40" rows="6" required></textarea>
+            </li>
+            <li>
+                <button class="botao" type="submit">Enviar mensagem</button>
+            </li>
+        </ul>
+    </form>
+</body>
+
+</html>
+Fonte:
+<a href="https://webdesign.tutsplus.com/pt/tutorials/bring-your-forms-up-to-date-with-css3-and-html5-validation--webdesign-4738">https://webdesign.tutsplus.com/pt/tutorials/bring-your-forms-up-to-date-with-css3-and-html5-validation--webdesign-4738</a>

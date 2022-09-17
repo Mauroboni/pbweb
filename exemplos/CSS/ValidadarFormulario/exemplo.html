@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mauro Henrique Lima de Boni">
+    <title>Validando um formulário usando CSS</title>
+    <style>
+        body {
+            font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+            background-color: #eee;
+        }
+
+        form{
+            background-color: #fff;
+            margin:20px auto;
+            box-shadow: 5px 5px 15px #aaa;
+            border: 3px solid #f1f1f1;
+            font-family: Georgia, Times, "Times New Roman", serif;
+            width: 70%;
+            padding: 10px;
+        }
+
+        /* Como o sub-titulo ficará posicionando na página */
+        h2 {
+            margin:10px auto;
+            text-align: center;
+            padding: 10px;
+        }
+
+        form img{
+            height: 70px;
+            margin: 10px auto;
+        }
+
+        form section{
+            text-align: center;
+        }
+
+        form label {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        /* Estilizando a entrada de dados */
+        form input[type=email],input[type=password] {
+            height: 20px;
+            width: 100%;
+            display: block;
+            margin: 0px;
+            text-align: left;
+            padding: 5px 5px;
+            border: 1px solid #aaa;
+            box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+            border-radius: 15px;
+            padding-right: 1%;
+        }
+
+        form button {
+            border: 0;
+            display: block;
+            margin: 10px auto;
+            width: 50%;
+            color: #fff;
+            background-color: #007fff;
+            height: 30px;
+            border-radius: 10px;
+        }
+
+        form button:hover, form button:focus {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <h2>Seja bem-vindo!</h2>
+    <form action="" method="post" name="formulario">
+        <section>
+            <img src="../../../imagens/logo.png" alt="Logo da OCP">
+        </section>
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="usuario@servidor.com" required 
+        pattern="[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,}$" title="O email deve ser válido!"/>
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" placeholder="Senha neste site" required
+        pattern=".{6}" title="A senha precisa ter pelo menos 6 caracteres!"/>
+        <button type="submit">Entrar</button>
+    </form>
+</body>
+
+</html>
