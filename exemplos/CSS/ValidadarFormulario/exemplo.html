@@ -9,7 +9,7 @@
     <title>Validando um formulário usando CSS</title>
     <style>
         body {
-            font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+            font: 14px/21px Arial, "Lucida Grande", "Lucida Sans Unicode", sans-serif;
             background-color: #eee;
         }
 
@@ -74,11 +74,20 @@
             cursor: pointer;
         }
 
-        form input:required:valid{
-            background: #fff url(../../../imagens/valido.png) no-repeat 98% center;
-            box-shadow: 0 0 5px #5cd053;
-            border-color: #28921f;            
+        form input:required {
+            background: #fff url(../../../imagens/asterisco10.png) no-repeat 98%;
         }
+
+        form input:required:valid{
+            background: #fff url(../../../imagens/valido.png) no-repeat 98%;
+            border-color: #28921f;
+        }
+        form input:required:invalid{
+            background: #fff url(../../../imagens/invalido.png) no-repeat 98%;
+            border-color: #b03535;
+        }
+
+
     </style>
 </head>
 
@@ -89,11 +98,12 @@
             <img src="../../../imagens/logo.png" alt="Logo da OCP">
         </section>
         <label for="email">Email</label>
-        <input type="email" name="email" placeholder="usuario@servidor.com" required 
-        pattern="[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,}$" title="O email deve ser válido!"/>
+        <input type="email" placeholder="Ex.: usuario@servidor.com" name="email" 
+        pattern="[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+        title="Informe o email que você usou no cadastro." required/>
         <label for="senha">Senha</label>
-        <input type="password" name="senha" placeholder="Senha neste site" required
-        pattern=".{6}" title="A senha precisa ter pelo menos 6 caracteres!"/>
+        <input type="password" placeholder="Insira a senha que você cadastrou na nossa plataforma" name=“senha” pattern=".{6}" 
+        required title="A senha precisa ter no mínimo 6 caracteres"/>
         <button type="submit">Entrar</button>
     </form>
 </body>
