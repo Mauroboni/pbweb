@@ -8,23 +8,39 @@
 </head>
 <body>
     <table border="1">
-        <tr>
-            <th>Título 1</th>
-            <th>Título 2</th>
-            <th>Título 3</th>
-        </tr>
-        <tr>
-            <td rowspan="2">Linha 1 Célula 1</td>
-            <td>Linha 1 Célula 2</td>
-            <td>Linha 1 Célula 3</td>
-        </tr>
-        <tr>
-            <td>Linha 2 Célula 2</td>
-            <td>Linha 2 Célula 3</td>
-        </tr>
-        <tr>
-            <td colspan="3">Linha 3 Célula 1</td>
-        </tr>
+        <caption>Vendas por departamento</caption>
+        <thead>
+            <tr>
+                <th rowspan="2">Departamento</th>
+                <th colspan="3">Trimestres/2022</th>
+            </tr>
+            <tr>
+                <th>Primeiro</th>
+                <th>Segundo</th>
+                <th>Terceiro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Informática</td>
+                <td>100</td>
+                <td>150</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>Vendas</td>
+                <td>200</td>
+                <td>250</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>Recursos humanos</td>
+                <td>50</td>
+                <td>75</td>
+                <td>100</td>
+            </tr>
+        </tbody>
     </table>
+
 </body>
 </html>

@@ -12,11 +12,10 @@
     <h1>Calculadora Simplex</h1>
     <p>Calculando as quatro operações básicas na WEB!</p>
     <form action="">
-
         <ul>
             <li>
                 <label for="valor1">Primeiro valor</label>
-                <input type="text" id="valor1">
+                <input type="number" id="valor1" minlength="1" required />
             </li>
             <li>
                 <label for="operacao">Escolha a operação aritmética</label>
@@ -29,7 +28,7 @@
             </li>
             <li>
                 <label for="valor2">Segundo valor</label>
-                <input type="text" id="valor2"><br>
+                <input id="valor2" required /><br>
             </li>
         </ul>
         <input type="button" onclick="Calcular('valor1', 'valor2', 'operacao')" value="Calcular">
